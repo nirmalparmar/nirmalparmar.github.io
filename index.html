@@ -253,6 +253,96 @@
             .social-links a { font-size: 1.2rem; }
         }
 
+        /* Experience Section */
+        .experience {
+            padding: 6rem 0;
+        }
+        .experience-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .experience-item {
+            background: var(--card-bg);
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 3px;
+            background: linear-gradient(180deg, var(--primary), var(--secondary));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .experience-item:hover::before {
+            opacity: 1;
+        }
+        .experience-item:hover {
+            border-color: rgba(0,245,212,0.3);
+            box-shadow: 0 8px 32px 0 rgba(0,245,212,0.1);
+            transform: translateX(8px);
+        }
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .experience-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+        }
+        .experience-company {
+            font-size: 1.1rem;
+            color: var(--text);
+            font-weight: 500;
+        }
+        .experience-period {
+            font-size: 0.95rem;
+            color: #888;
+            font-weight: 500;
+        }
+        .experience-description {
+            color: #b0b0b0;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .experience-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+        .tech-tag {
+            background: #18181b;
+            color: var(--primary);
+            font-size: 0.85rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+        @media (max-width: 600px) {
+            .experience { padding: 3rem 0; }
+            .experience-timeline { gap: 1.5rem; }
+            .experience-item { padding: 1.3rem; }
+            .experience-title { font-size: 1.15rem; }
+            .experience-company { font-size: 1rem; }
+            .experience-period { font-size: 0.88rem; }
+            .experience-description { font-size: 0.98rem; }
+        }
+
         /* Projects Section */
         .projects {
             padding: 8rem 0;
@@ -506,6 +596,7 @@
         <div class="container nav-content">
             <div class="logo">NP</div>
             <div class="nav-links">
+                <a href="#experience">Experience</a>
                 <a href="#projects">Projects</a>
                 <a href="#skills">Skills</a>
                 <a href="#contact">Contact</a>
@@ -514,6 +605,7 @@
                 <i class="fas fa-bars"></i>
             </button>
             <div class="nav-dropdown" id="navDropdown">
+                <a href="#experience">Experience</a>
                 <a href="#projects">Projects</a>
                 <a href="#skills">Skills</a>
                 <a href="#contact">Contact</a>
@@ -532,9 +624,60 @@
             </div>
         </section>
 
+        <section id="experience" class="experience">
+            <h2 class="section-title">Professional Experience</h2>
+            <div class="experience-timeline">
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Software Development Engineer II</div>
+                            <div class="experience-company">Fynd (Jio)</div>
+                        </div>
+                        <div class="experience-period">Nov 2022 - Present</div>
+                    </div>
+                    <div class="experience-description">
+                        <ul>
+                            <li>Designed and developed a cohort engine for a 400M+ users accross multiple platforms in Jio, powering targeted campaigns and boosting engagement.</li>
+                            <li>Engineered scalable surveying and analytics systems for 10K+ retail stores, improving operational visibility and decision-making.</li>
+                            <li>Built Size recommendation system, enhancing AJIO’s product fit recommendations and user experience.</li>
+                            <li>Delivered NLP-powered and event-driven audience engines, boosting campaign performance and user acquisition by 20%.</li>
+                        </ul>
+                    </div>
+                    <div class="experience-tech">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Kafka</span>
+                        <span class="tech-tag">NLP</span>
+                        <span class="tech-tag">Microservices</span>
+                        <span class="tech-tag">RHOS</span>
+                        <span class="tech-tag">Real-time Pipelines</span>
+                    </div>
+                </div>
+                
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Software Engineer</div>
+                            <div class="experience-company">Flair Labs</div>
+                        </div>
+                        <div class="experience-period">Feb 2020 - Nov 2022</div>
+                    </div>
+                    <div class="experience-description">
+                        Built real-time video KYC monitoring systems reducing RCA time by 30% and driving 20% revenue growth. Designed scalable data pipelines and admin tools to eliminate revenue leakage and streamline operations. Optimized Android streaming using Ant Media SDK, enhancing performance and user experience by 10%.
+                    </div>
+                    <div class="experience-tech">
+                        <span class="tech-tag">Real-time Video</span>
+                        <span class="tech-tag">Android</span>
+                        <span class="tech-tag">Data Pipelines</span>
+                        <span class="tech-tag">Ant Media SDK</span>
+                        <span class="tech-tag">KYC Systems</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="projects" class="projects">
-            <h2 class="section-title">Projects</h2>
-            <div class="projects-desc">Here's some of projects that I have worked on.</div>
+            <h2 class="section-title">Personal Projects</h2>
+            <div class="projects-desc">Here's some of my personal projects that I have worked on.</div>
             <div class="project-grid">
                 <div class="project-card">
                     <img class="project-image" src="/public/jsonreader.png" alt="Project 1" />
@@ -542,7 +685,7 @@
                         <div class="project-title-row">
                             <div class="project-title">JSON Reader</div>
                             <div class="project-actions">
-                                <a href="https://www.jsonreader.com" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://www.jsonreader.com" title="JSON Reader" target="_blank"><i class="fas fa-external-link-alt"></i></a>
                                 <!-- <a href="#" title="Source Code"><i class="fab fa-github"></i></a> -->
                             </div>
                         </div>
@@ -553,26 +696,44 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <img class="project-image" src="/public/meytier.png" alt="Project 2" />
+                    <img class="project-image" src="/public/resizeimages.webp" alt="Project 2" />
                     <div class="project-content">
                         <div class="project-title-row">
-                            <div class="project-title">Meytier</div>
+                            <div class="project-title">Resize Images</div>
                             <div class="project-actions">
-                                <a href="https://www.meytier.com" title="Live Demo"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://resizeimages.org" title="Resize Images" target="_blank"><i class="fas fa-external-link-alt"></i></a>
                                 <!-- <a href="#" title="Source Code"><i class="fab fa-github"></i></a> -->
                             </div>
                         </div>
                         <div class="project-badges">
-                            <span class="badge angular">Angular</span>
-                            <span class="badge node">Node.js</span>
-                            <span class="badge express">Express</span>
-                            <span class="badge mongodb">MongoDB</span>
-                            <span class="badge docker">Docker</span>
-                            <span class="badge kubernetes">Kubernetes</span>
-                            <span class="badge aws">AWS</span>
+                            <span class="badge react">Next.js</span>
+                            <span class="badge tailwind">Shadcn UI</span>
+                            <span class="badge typescript">TypeScript</span>
+                            <span class="badge javascript">Fast API</span>
                         </div>
                         <div class="project-desc">
-                            Meytier is a cutting-edge hiring and talent intelligence platform that helps companies discover and hire exceptional mid-to-senior level talent. As part of a core team of three engineers, I contributed to building scalable features, optimizing performance, and delivering a seamless user experience for both employers and candidates.
+                            Resize Images is a web application that allows you to resize images online. It provides a user-friendly interface for resizing images, making it easier to work with images.
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <img class="project-image" src="/public/pdfsoul.webp" alt="Project 3" />
+                    <div class="project-content">
+                        <div class="project-title-row">
+                            <div class="project-title">PDF Soul</div>
+                            <div class="project-actions">
+                                <a href="https://pdfsoul.com" title="PDF Soul" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+                                <!-- <a href="#" title="Source Code"><i class="fab fa-github"></i></a> -->
+                            </div>
+                        </div>
+                        <div class="project-badges">
+                            <span class="badge react">Next.js</span>
+                            <span class="badge tailwind">Shadcn UI</span>
+                            <span class="badge typescript">TypeScript</span>
+                            <span class="badge javascript">Fast API</span>
+                        </div>
+                        <div class="project-desc">
+                            PDF Soul is a powerful PDF tools suite. Merge, Split, Compress, Sign, Convert and more.
                         </div>
                     </div>
                 </div>
